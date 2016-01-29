@@ -1,3 +1,10 @@
 <h1>My Ember Blog</h1>
 <h3>by Steven Slade</h3>
-{{#create-new-post}}{{/create-new-post}}
+
+{{#each model as |post|}}
+
+  {{#blog-post post=post}}{{/blog-post}}
+
+{{/each}}
+
+{{#create-new-post newPost=model createPost="createPost"}}{{/create-new-post}}
